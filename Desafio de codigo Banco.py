@@ -1,24 +1,51 @@
+def continua(x):
+     print('')
+
+
 menu = """
 
 [1] Depositar
 [2] Sacar
 [3] Transferencia entre contas
 [4] Extrato
-[?] Recarga de celular e vale-transporte (indisponível)
 [5] Help
 [6] Sair
 
 """
+
+menu_emulador = """
+Antes de começamos vc que definir o seu 
+     * Saldo
+     * Limite de saque
+     
+     [1] sim [2] não
+     
+     """
+opcao = int(input(menu_emulador))
 saldo = 0
-limite = 500
+limite = 0
+
+while True:
+     if opcao == 1:
+          saldo += float(input("qual sera o valor do saldo: "))
+          limite += float(input("qual sera o Limite de saque: "))
+          break
+     elif opcao == 2:
+          saldo += 0
+          limite += 500
+          break
+     else:
+          print("valor invalido")
+          opcao = input(menu_emulador)
+          if opcao == 1 or opcao == 2:
+               break
+
+
+LIMITE_DE_SAQUE = 3               
 numero_de_saque = 1
-LIMITE_DE_SAQUE = 3
 extrato = [] 
 i = 0
-
-
-          
-     
+    
 while True:
 
      opção = int(input(menu))
@@ -48,6 +75,7 @@ while True:
                     break
                elif msg == 1:
                     continue
+               
          
                
                
@@ -117,7 +145,7 @@ while True:
                     numero_conta = int(input("Numero da Conta: "))
                     agencia = int(input("Numero da Agencia: "))
                     print('''
-                          
+                    Qual e o seu banco?    
                     ------------------------------------
                           [1] Itaú        [4] Banco do Brasil         [7] Banco ABC
                           [2] Bradesco    [5] Caixa Econômica Federa  [8] Nubank
@@ -144,7 +172,6 @@ while True:
                     while valor_DOC < 1:
                          print("valor incorreto")
                          valor_DOC = int(input("Qual valor da transeferencia: "))
-                    saldo -= valor_DOC
                     print(f"""
                                    Verificar Informação
                                    
@@ -167,6 +194,7 @@ while True:
                          print('Transferencia realizada com susesso')
                          resposta = f"Transferencia em DOC | {Banco} | Valor R${valor_DOC}  | Nome: {nome} | CPF:{CPF}"
                          extrato.append(resposta)
+                         saldo -= valor_DOC
                          break
                     
                if escolha_transferencia == 2: # isso ta em loop e faltando muitas partes 
@@ -328,7 +356,6 @@ while True:
                 www.BancoTWA.com.br 🌀
                 
                 """)  
-          
           
           
      elif opção == 6:
