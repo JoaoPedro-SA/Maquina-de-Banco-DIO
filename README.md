@@ -2,6 +2,9 @@
 
 Este é um simulador de sistema bancário simples desenvolvido em Python. Ele permite a realização de operações como depósito, saque, transferências entre contas, e exibição de extrato bancário. O sistema também oferece uma funcionalidade de ajuda e controle de saldo e limite de saque.
 
+Voce pode visualizar por meio do google colab
+Link do Colab: https://colab.research.google.com/drive/1FY3Mej8mS_9cL3owg0Snfre-K0LO9snb
+
 ## Funcionalidades
 
 1. **Depositar**: Permite adicionar dinheiro à conta, exibindo o saldo atualizado.
